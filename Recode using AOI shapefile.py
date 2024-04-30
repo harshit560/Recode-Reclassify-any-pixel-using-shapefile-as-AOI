@@ -1,8 +1,4 @@
 #!/usr/bin/env python
-# coding: utf-8
-
-# In[4]:
-
 
 #Recode using AOI to and change the pixel value
 import numpy as np
@@ -39,16 +35,15 @@ def update_and_merge_pixels(input_raster, shapefile_path, output_raster, new_val
         with rasterio.open(output_raster, "w", **src.profile) as dest:
             dest.write(raster_data, 1)
 
-# Example usage:
-input_raster = "C:\\Users\\Hp\\Desktop\\Ladakh\\new1.tif"
-shapefile_path = "C:\\Users\\Hp\\Desktop\\Ladakh\\aoi3.shp"
+# Example usage: use your path
+input_raster = "C:\\Users\\Hp\\Desktop\\Ladakh\\Sample_raster.tif"
+shapefile_path = "C:\\Users\\Hp\\Desktop\\Ladakh\\sample_AOI.shp"
 output_raster = "C:\\Users\\Hp\\Desktop\\Ladakh\\output_image.tif"
 new_value = 3  # New pixel value
 
 update_and_merge_pixels(input_raster, shapefile_path, output_raster, new_value)
 
 
-# In[ ]:
 
 
 
